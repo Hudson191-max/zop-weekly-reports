@@ -1,0 +1,61 @@
+{
+  "week": "2026-W40",
+  "voice": "en-GB-RyanNeural",
+  "generated": "2026-10-02T14:21:27.013Z",
+  "scenes": [
+    {
+      "index": 0,
+      "file": "scene00.mp3",
+      "duration": 20.808,
+      "text": "Good evening. Zop AI, weekly briefing, week forty — Monday the twenty-eighth of September through Sunday the fourth of October. This week, the machines did the boring parts: twelve thousand tasks automated, and support finally went quiet. Sit back, sir. The numbers are rather pleasing."
+    },
+    {
+      "index": 1,
+      "file": "scene01.mp3",
+      "duration": 26.256,
+      "text": "First, the scoreboard. Twelve thousand eight hundred forty-seven tasks automated — up eighteen percent. Average response time, one point nine seconds. Support tickets: two hundred fourteen. That is down thirty-one percent. And uptime held at ninety-nine point nine eight percent. Four numbers, one conclusion: the platform is pulling its weight."
+    },
+    {
+      "index": 2,
+      "file": "scene02.mp3",
+      "duration": 22.776,
+      "text": "Now, the build board. Smart Triage version two shipped on Tuesday, and it routes tickets without waking a human four times out of five. The Slack connector shipped Thursday. Multilingual summaries are at sixty-eight percent, on track. Audit log export, though, sits at forty-five percent and is flagged at risk — the one to watch."
+    },
+    {
+      "index": 3,
+      "file": "scene03.mp3",
+      "duration": 26.208,
+      "text": "Here is the week's best chart. Tickets handled per day, Monday through Sunday. Fifty-eight. Forty-one. Thirty-six. Twenty-two. Fourteen. Nine. And Sunday, nine. Every step down is an hour a human got back. That slope is the entire business case, drawn in one line."
+    },
+    {
+      "index": 4,
+      "file": "scene04.mp3",
+      "duration": 20.448,
+      "text": "Where did the automation hours go? Support takes forty-two percent. Sales ops, twenty-seven. Reporting, nineteen. Internal tooling, twelve. Support still leads, but sales ops grew fastest — that is the quiet expansion to watch next quarter."
+    },
+    {
+      "index": 5,
+      "file": "scene05.mp3",
+      "duration": 29.328,
+      "text": "The week, day by day. Monday: a data pipeline hiccup, fixed before lunch — forty minutes, no data lost. Tuesday: Smart Triage version two goes live. Wednesday: the slowest day, and quietly the most important — the audit review passed with zero findings. Thursday: the Slack connector ships. Friday: the Northwind demo. They signed before the coffee went cold."
+    },
+    {
+      "index": 6,
+      "file": "scene06.mp3",
+      "duration": 20.736,
+      "text": "The wins: automation coverage crossed eighty percent, the audit passed clean, and Northwind signed. The blockers: the audit log export slipped — the schema migration is trickier than planned — and a rate limit on the CRM connector side, workaround already in place. Two blockers, both owned, both dated."
+    },
+    {
+      "index": 7,
+      "file": "scene07.mp3",
+      "duration": 21.624,
+      "text": "Next week: the audit log export gets its new schema, with a hard deadline of Thursday. Multilingual summaries hit public beta. And the sales ops connector graduates from pilot to production. If those three land, week forty-one ends with automation coverage past ninety percent. That, sir, is the plan."
+    },
+    {
+      "index": 8,
+      "file": "scene08.mp3",
+      "duration": 16.08,
+      "text": "That closes week forty. Numbers up, tickets down, one signature on the wall. The full data behind every figure lives in the report pack — and next week's briefing will be waiting, right here. Until then… the machines have it from here."
+    }
+  ]
+}
