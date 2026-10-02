@@ -1,7 +1,7 @@
 {
   "name": "zop-weekly-reports",
   "version": "0.1.0",
-  "description": "Zop AI animated weekly report — narrated, interactive, data-driven web reports plus video export.",
+  "description": "Z.AI animated weekly report — narrated, interactive, data-driven web reports plus video export.",
   "type": "module",
   "scripts": {
     "serve": "node build/serve.js",

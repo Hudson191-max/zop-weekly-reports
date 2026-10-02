@@ -55,7 +55,7 @@ const template = {
     {
       type: "title",
       label: "Opening",
-      kicker: `ZOP AI  ·  CLIENT BRIEFING  ·  ${weekId}`,
+      kicker: `Z.AI  ·  CLIENT BRIEFING  ·  ${weekId}`,
       title: title || `Week ${weekNum} briefing`,
       subtitle: "What this week was actually about.",
       chips: ["Narrated by J.A.R.V.I.S"],

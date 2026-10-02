@@ -67,7 +67,7 @@ async function main() {
   }
 
   const period = week.period ? `${week.period.start} → ${week.period.end}` : "";
-  $("gate-kicker").textContent = `ZOP AI · WEEKLY BRIEFING · ${weekId}`;
+  $("gate-kicker").textContent = `Z.AI · WEEKLY BRIEFING · ${weekId}`;
   $("gate-title").textContent = week.title || "Weekly briefing";
   $("gate-sub").textContent =
     (manifest ? "Narrated by " + (week.theme?.narrator || "J.A.R.V.I.S") + " · " : "") + period;

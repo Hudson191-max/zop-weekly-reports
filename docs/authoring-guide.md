@@ -24,7 +24,7 @@ Every section accepts an optional **`label`** (scene-menu name), **`narration`**
 ```json
 {
   "type": "title",
-  "kicker": "ZOP AI · CLIENT BRIEFING · 2026-W41",
+  "kicker": "Z.AI · CLIENT BRIEFING · 2026-W41",
   "title": "The headline claim",
   "subtitle": "One line on the shape of the week.",
   "chips": ["Narrated by J.A.R.V.I.S"],

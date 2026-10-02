@@ -1,4 +1,4 @@
-# Zop AI — Animated Weekly Reports
+# Z.AI — Animated Weekly Reports
 
 An animated, narrated, interactive weekly report that plays in any browser — no frameworks, no build step, no dependencies. Drop in one JSON file per week, run one command, and the report is ready: J.A.R.V.I.S narration, animated charts, interactive navigation.
 
