@@ -9,3 +9,4 @@ reports/
 *.log
 .zcode/
 .playwright-mcp/
+build/video/frames/
