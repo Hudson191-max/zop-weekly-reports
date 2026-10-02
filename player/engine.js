@@ -2,7 +2,7 @@
 // navigation, and the progress/timecode UI.
 
 import { renderSection } from "./sections/index.js";
-import { revealStaggered } from "./format.js";
+import { revealStaggered, prefersReducedMotion } from "./format.js";
 
 const HOLD_AFTER_NARRATION_S = 1.4; // breathing room before auto-advance
 const MIN_SCENE_S = 5;
@@ -50,18 +50,31 @@ export class ReportEngine {
 
   /* ---------------- rendering ---------------- */
 
-  renderScene(i) {
+  /**
+   * Render scene i; dir = 1 forward (next), -1 backward (prev) drives the
+   * directional crossfade. Reduced-motion/export mode swaps instantly.
+   */
+  renderScene(i, dir = 1) {
     this.narrator.cancel();
     clearTimeout(this.holdTimer);
     cancelAnimationFrame(this.raf);
 
-    this.stage.replaceChildren();
+    const previous = this.stage.firstElementChild;
     const section = this.sections[i];
     const ctx = { index: i, count: this.sceneCount, tone: this.toneFor(i) };
     const root = renderSection(section, ctx);
     this.stage.append(root);
     root._onMounted?.();
     revealStaggered(root);
+
+    if (previous && !prefersReducedMotion) {
+      previous.classList.add(dir >= 0 ? "scene-exit-up" : "scene-exit-down");
+      previous.addEventListener("animationend", () => previous.remove(), { once: true });
+      setTimeout(() => previous.isConnected && previous.remove(), 700); // safety net
+      root.classList.add(dir >= 0 ? "scene-enter-up" : "scene-enter-down");
+    } else {
+      previous?.remove();
+    }
 
     this.idx = i;
     this.ended = false;
@@ -72,9 +85,9 @@ export class ReportEngine {
 
   /* ---------------- playback ---------------- */
 
-  play(i = this.idx < 0 ? 0 : this.idx) {
+  play(i = this.idx < 0 ? 0 : this.idx, dir = 1) {
     const changed = i !== this.idx;
-    if (changed || this.idx < 0) this.renderScene(i);
+    if (changed || this.idx < 0) this.renderScene(i, dir);
     this.playing = true;
     this.ended = false;
     this.ui.btnPlay.textContent = "❚❚";
@@ -135,16 +148,16 @@ export class ReportEngine {
   }
 
   next() {
-    if (this.idx < this.sceneCount - 1) this.play(this.idx + 1);
+    if (this.idx < this.sceneCount - 1) this.play(this.idx + 1, 1);
   }
 
   prev() {
-    if (this.idx > 0) this.play(this.idx - 1);
+    if (this.idx > 0) this.play(this.idx - 1, -1);
   }
 
   goTo(i) {
     if (i === this.idx) return;
-    this.play(Math.max(0, Math.min(this.sceneCount - 1, i)));
+    this.play(Math.max(0, Math.min(this.sceneCount - 1, i)), i > this.idx ? 1 : -1);
   }
 
   seekToFraction(f) {

@@ -67,25 +67,9 @@ html, body {
   gap: 8px;
 }
 
-/* Ghost number motif */
-.ghost {
-  position: absolute;
-  top: -10px;
-  right: 4px;
-  font-size: clamp(110px, 15vw, 170px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.5;
-}
-.scene.dark .ghost { color: var(--bg-dark-2); }
-.scene.light .ghost { color: #e4e7f6; }
-
-/* Typography */
+/* Typography (fluid: text scales with the screen, stays readable on phones) */
 .kicker {
-  font-size: 13px;
+  font-size: clamp(12px, 0.4vw + 11px, 14px);
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -95,14 +79,14 @@ html, body {
 .scene.light .kicker { color: var(--primary); }
 
 .scene-title {
-  font-size: clamp(30px, 4.6vw, 50px);
+  font-size: clamp(32px, 4.6vw, 52px);
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.08;
   margin: 0 0 10px;
 }
 .scene-sub {
-  font-size: clamp(15px, 1.6vw, 19px);
+  font-size: clamp(16px, 1vw + 12px, 20px);
   line-height: 1.5;
   margin: 0;
   max-width: 62ch;
@@ -111,7 +95,7 @@ html, body {
 .scene.light .scene-sub { color: var(--muted); }
 
 .scene-caption {
-  font-size: 14px;
+  font-size: clamp(14.5px, 0.5vw + 12px, 16.5px);
   margin: 6px 0 0;
 }
 .scene.dark .scene-caption { color: var(--inv-muted); }
@@ -147,13 +131,13 @@ html, body {
   font-variant-numeric: tabular-nums;
 }
 .scene.dark .title-stat .num { color: var(--accent); }
-.title-stat .lbl { font-size: 13px; }
+.title-stat .lbl { font-size: clamp(13px, 0.45vw + 11.5px, 15px); }
+.title-stat .lbl { color: var(--muted); }
 .scene.dark .title-stat .lbl { color: var(--inv-muted); }
-.scene.light .title-stat .lbl { color: var(--muted); }
 
 .chip-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 30px; }
 .chip {
-  font-size: 13px;
+  font-size: clamp(13.5px, 0.4vw + 12px, 15px);
   font-weight: 600;
   padding: 9px 16px;
   border-radius: 999px;
@@ -179,7 +163,7 @@ html, body {
   gap: 6px;
 }
 .metric-label {
-  font-size: 13px;
+  font-size: clamp(12.5px, 0.4vw + 11.5px, 14px);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -195,12 +179,12 @@ html, body {
 }
 .metric-value .suffix { font-size: 0.55em; font-weight: 600; margin-left: 2px; }
 .metric-delta {
-  font-size: 14px;
+  font-size: clamp(14px, 0.45vw + 12.5px, 15.5px);
   font-weight: 700;
   color: var(--good);
 }
 .metric-delta.bad { color: var(--bad); }
-.metric-note { font-size: 13px; color: var(--muted); }
+.metric-note { font-size: clamp(13.5px, 0.45vw + 12px, 15px); color: var(--muted); }
 
 /* ---------- Projects ---------- */
 
@@ -220,8 +204,8 @@ html, body {
   gap: 10px 26px;
   align-items: center;
 }
-.project-name { font-size: 17px; font-weight: 700; }
-.project-note { grid-column: 1 / 3; font-size: 13.5px; color: var(--muted); margin-top: -4px; }
+.project-name { font-size: clamp(17px, 0.7vw + 14px, 19px); font-weight: 700; }
+.project-note { grid-column: 1 / 3; font-size: clamp(14px, 0.5vw + 12.5px, 15.5px); color: var(--muted); margin-top: -4px; }
 .progress-track {
   height: 10px;
   border-radius: 999px;
@@ -268,6 +252,12 @@ html, body {
   flex-direction: column;
 }
 .chart-svg { width: 100%; height: auto; display: block; }
+@media (max-width: 700px) {
+  /* Keep chart text legible on phones: scale the chart down less than the
+     screen, scroll horizontally instead. */
+  .chart-wrap { overflow-x: auto; }
+  .chart-svg { min-width: 540px; }
+}
 
 .bar-rect {
   fill: var(--primary);
@@ -282,7 +272,7 @@ html, body {
   transition-delay: var(--d, 0s);
 }
 .bar-value {
-  font-size: 13px;
+  font-size: clamp(13px, 0.5vw + 12px, 14.5px);
   font-weight: 700;
   fill: var(--text);
   opacity: 0;
@@ -292,7 +282,7 @@ html, body {
   transition: opacity 0.4s ease;
   transition-delay: var(--d, 0s);
 }
-.axis-label { font-size: 12.5px; fill: var(--muted); font-family: var(--font); }
+.axis-label { font-size: clamp(12.5px, 0.5vw + 11.5px, 14px); fill: var(--muted); font-family: var(--font); }
 .gridline { stroke: #e7e9f4; stroke-width: 1; }
 
 .line-path {
@@ -331,7 +321,7 @@ html, body {
   padding-top: 16px;
   border-top: 1px solid #eceef5;
 }
-.legend-item { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--muted); }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: clamp(13.5px, 0.45vw + 12px, 15px); color: var(--muted); }
 .legend-dot { width: 11px; height: 11px; border-radius: 3px; }
 .legend-val { font-weight: 700; color: var(--text); }
 
@@ -371,14 +361,14 @@ html, body {
 .tl-event.tag-milestone::before { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-tint); }
 .tl-head { display: flex; gap: 12px; align-items: baseline; }
 .tl-day {
-  font-size: 13px;
+  font-size: clamp(13px, 0.45vw + 12px, 14px);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--primary-deep);
   min-width: 86px;
 }
-.tl-text { font-size: 15.5px; line-height: 1.45; }
+.tl-text { font-size: clamp(15.5px, 0.6vw + 13px, 18px); line-height: 1.45; }
 
 /* ---------- Wins & blockers ---------- */
 
@@ -406,8 +396,8 @@ html, body {
 .wb-col.blockers .wb-col-title { color: var(--bad); }
 .wb-item { padding: 11px 0; border-top: 1px solid #eceef5; }
 .wb-item:first-of-type { border-top: none; }
-.wb-text { font-size: 15px; font-weight: 600; margin: 0; }
-.wb-note { font-size: 13px; color: var(--muted); margin: 3px 0 0; }
+.wb-text { font-size: clamp(15.5px, 0.6vw + 13px, 18px); font-weight: 600; margin: 0; }
+.wb-note { font-size: clamp(13.5px, 0.45vw + 12px, 15px); color: var(--muted); margin: 3px 0 0; }
 
 /* ---------- Outlook ---------- */
 
@@ -433,10 +423,10 @@ html, body {
   border-radius: 999px;
   white-space: nowrap;
 }
-.outlook-item .txt { font-size: 15.5px; font-weight: 600; }
+.outlook-item .txt { font-size: clamp(15.5px, 0.6vw + 13px, 18px); font-weight: 600; }
 .outlook-note {
   margin-top: 22px;
-  font-size: 15px;
+  font-size: clamp(15px, 0.55vw + 12.5px, 17px);
   color: var(--muted);
   font-style: italic;
 }
@@ -479,14 +469,14 @@ html, body {
 #controls { bottom: 0; }
 
 .hud-week {
-  font-size: 12px;
+  font-size: clamp(12.5px, 0.35vw + 11.5px, 14px);
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--accent);
   white-space: nowrap;
 }
 .hud-title {
-  font-size: 13.5px;
+  font-size: clamp(13.5px, 0.4vw + 12.5px, 15px);
   color: var(--inv-muted);
   margin-left: 16px;
   overflow: hidden;
@@ -565,7 +555,7 @@ html, body {
   max-width: min(820px, 86vw);
   background: rgba(20, 22, 43, 0.82);
   color: var(--inv);
-  font-size: 15.5px;
+  font-size: clamp(15.5px, 0.7vw + 13px, 18px);
   line-height: 1.45;
   padding: 10px 18px;
   border-radius: 10px;
@@ -628,7 +618,7 @@ html, body {
   border: none;
   color: var(--inv);
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 16px;
   padding: 12px 14px;
   border-radius: 10px;
   cursor: pointer;
@@ -681,6 +671,23 @@ html, body {
   margin: 0;
 }
 .gate-sub { font-size: 17px; color: var(--inv-muted); margin: 0; }
+
+.gate-weeks { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+.gate-chip {
+  appearance: none;
+  border: 1px solid var(--bg-dark-2);
+  background: var(--bg-dark-2);
+  color: var(--inv);
+  font-family: var(--font);
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.gate-chip:hover { border-color: var(--primary); }
+.gate-chip.current { background: var(--primary); border-color: var(--primary); }
 .gate-btn {
   margin-top: 14px;
   appearance: none;
@@ -699,6 +706,19 @@ html, body {
 .gate-btn:disabled { opacity: 0.5; cursor: wait; }
 .gate-hint { font-size: 13px; color: var(--inv-muted); margin: 6px 0 0; }
 
+/* ---------- Scene transitions (directional crossfade) ---------- */
+
+.scene-exit-up, .scene-exit-down { animation: sceneOut .45s var(--ease-out) forwards; }
+.scene-enter-up, .scene-enter-down { animation: sceneIn .55s var(--ease-out); }
+.scene-exit-up, .scene-exit-down { z-index: 1; }
+.scene-enter-up, .scene-enter-down { z-index: 2; }
+@keyframes sceneOut { to { opacity: 0; transform: translateY(calc(34px * var(--dir, 1))) scale(0.985); } }
+@keyframes sceneIn { from { opacity: 0; transform: translateY(calc(-42px * var(--dir, 1))); } }
+.scene-exit-up { --dir: 1; }
+.scene-exit-down { --dir: -1; }
+.scene-enter-up { --dir: 1; }
+.scene-enter-down { --dir: -1; }
+
 /* ---------- Reduced motion / video-export (static final states) ---------- */
 
 html.export [data-animate],
@@ -712,6 +732,8 @@ html.export .bar-rect { transform: scaleY(1) !important; }
 html.export .line-area { opacity: 1 !important; transition: none !important; }
 html.export .line-dot { opacity: 1 !important; transition: none !important; }
 html.export .progress-bar { transform: scaleX(1) !important; transition: none !important; }
+html.export .scene-exit-up, html.export .scene-exit-down,
+html.export .scene-enter-up, html.export .scene-enter-down { animation: none !important; }
 html.export .donut-seg {
   stroke-dasharray: var(--len, 0) var(--rest, 742) !important;
   transition: none !important;

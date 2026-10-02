@@ -4,13 +4,25 @@
 // Usage: node build/generate.js <weekId> [--skip-tts]
 // e.g.:  node build/generate.js 2026-W40
 
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { validateWeek, printValidation } from "./lib/validate.js";
 import { generateAudio, ttsAvailable } from "./tts.js";
 
 const ROOT = join(fileURLToPath(new URL(".", import.meta.url)), "..");
+
+/** Register the week in data/weeks/index.json so the player's picker sees it. */
+async function upsertWeekIndex(weekId) {
+  const idxFile = join(ROOT, "data", "weeks", "index.json");
+  let weeks = [];
+  try {
+    weeks = JSON.parse(await readFile(idxFile, "utf8")).weeks || [];
+  } catch { /* first week */ }
+  if (!weeks.includes(weekId)) weeks.push(weekId);
+  weeks.sort();
+  await writeFile(idxFile, JSON.stringify({ weeks }, null, 2) + "\n");
+}
 
 const weekId = process.argv[2];
 const skipTts = process.argv.includes("--skip-tts");
@@ -41,6 +53,7 @@ try {
 console.log(`Validating ${weekId}…`);
 const result = validateWeek(week, { file: `${weekId}.json` });
 if (!printValidation(result, weekId)) process.exit(1);
+await upsertWeekIndex(weekId);
 
 if (result.warnings.length) {
   console.log("  (warnings don't block the build — fix them when you can)");

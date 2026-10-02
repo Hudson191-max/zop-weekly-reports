@@ -11,9 +11,8 @@ export function sceneShell(section, ctx) {
     class: `scene ${ctx.tone}`,
     "aria-label": section.label || `Scene ${ctx.index + 1}`,
   });
-  const ghost = el("div", { class: "ghost", "aria-hidden": "true" }, String(ctx.index + 1).padStart(2, "0"));
   const inner = el("div", { class: "scene-inner" });
-  root.append(ghost, inner);
+  root.append(inner);
   return { root, inner };
 }
 

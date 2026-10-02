@@ -1,0 +1,175 @@
+{
+  "week": "2026-W41",
+  "title": "Week 41 briefing",
+  "subtitle": "One line on the shape of the week — the claim, not the topic.",
+  "period": {
+    "start": "2026-10-05",
+    "end": "2026-10-11"
+  },
+  "theme": {
+    "accent": "#5865F2",
+    "accentAlt": "#FFB020",
+    "narrator": "J.A.R.V.I.S"
+  },
+  "sections": [
+    {
+      "type": "title",
+      "label": "Opening",
+      "kicker": "ZOP AI  ·  CLIENT BRIEFING  ·  2026-W41",
+      "title": "Week 41 briefing",
+      "subtitle": "What this week was actually about.",
+      "chips": [
+        "Narrated by J.A.R.V.I.S"
+      ],
+      "stats": [
+        {
+          "label": "Metric one",
+          "value": 0
+        },
+        {
+          "label": "Metric two",
+          "value": 0
+        },
+        {
+          "label": "Metric three",
+          "value": 0
+        }
+      ],
+      "narration": "Cold-open hook here. Start in the middle — a claim, a number, a tease. No throat-clearing."
+    },
+    {
+      "type": "scoreboard",
+      "label": "Scoreboard",
+      "heading": "The week in numbers",
+      "metrics": [
+        {
+          "label": "Metric name",
+          "value": 100,
+          "delta": "+0%",
+          "good": true,
+          "note": "vs last week"
+        },
+        {
+          "label": "Metric name",
+          "value": 50,
+          "suffix": "%",
+          "delta": "stable",
+          "good": true,
+          "note": "what it measures"
+        }
+      ],
+      "narration": "The scoreboard story: what changed, why it matters, the sharpest number."
+    },
+    {
+      "type": "projects",
+      "label": "Build board",
+      "heading": "What the team shipped",
+      "items": [
+        {
+          "name": "Project name",
+          "status": "shipped",
+          "progress": 100,
+          "note": "What it changes for the customer."
+        },
+        {
+          "name": "Project name",
+          "status": "in-progress",
+          "progress": 50,
+          "note": "Where it stands, what is next."
+        }
+      ],
+      "narration": "The build board story: per project — shipped or not, and the evidence."
+    },
+    {
+      "type": "chart",
+      "label": "Headline chart",
+      "heading": "The chart that tells the week",
+      "caption": "One line of context for the chart.",
+      "chart": {
+        "kind": "bar",
+        "labels": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "series": [
+          {
+            "name": "Series",
+            "values": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "narration": "Walk the chart's shape, then land the one conclusion it proves."
+    },
+    {
+      "type": "timeline",
+      "label": "The week",
+      "heading": "The week, day by day",
+      "events": [
+        {
+          "day": "Mon",
+          "date": "Jan 1",
+          "text": "What happened.",
+          "tag": "release"
+        },
+        {
+          "day": "Fri",
+          "date": "Jan 5",
+          "text": "What happened.",
+          "tag": "win"
+        }
+      ],
+      "narration": "The week as a story: day by day, with the turning point named."
+    },
+    {
+      "type": "winsBlockers",
+      "label": "Wins & blockers",
+      "heading": "Wins and blockers",
+      "wins": [
+        {
+          "text": "A concrete win.",
+          "note": "Why it matters."
+        }
+      ],
+      "blockers": [
+        {
+          "text": "A concrete blocker.",
+          "note": "Who owns it, when it clears."
+        }
+      ],
+      "narration": "The honest part: the wins worth bragging about, the blockers with owners and dates."
+    },
+    {
+      "type": "outlook",
+      "label": "Next week",
+      "heading": "Next week's plan",
+      "items": [
+        {
+          "text": "A commitment.",
+          "due": "Thu"
+        }
+      ],
+      "note": "The one-line stakes for next week.",
+      "narration": "Next week: the commitments, with deadlines, and the stakes if they land."
+    },
+    {
+      "type": "outro",
+      "label": "Close",
+      "heading": "End of briefing",
+      "message": "A quotable last line.",
+      "highlights": [
+        "+0% metric",
+        "0 incidents"
+      ],
+      "narration": "Button: callback to something earlier, plus what happens next."
+    }
+  ]
+}

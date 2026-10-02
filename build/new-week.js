@@ -2,11 +2,23 @@
 //
 // Usage: node build/new-week.js 2026-W41 [--title "…"]
 
-import { writeFile, access } from "node:fs/promises";
+import { writeFile, readFile, access } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(fileURLToPath(new URL(".", import.meta.url)), "..");
+
+/** Register the week in data/weeks/index.json so the player's picker sees it. */
+async function upsertWeekIndex(weekId) {
+  const idxFile = join(ROOT, "data", "weeks", "index.json");
+  let weeks = [];
+  try {
+    weeks = JSON.parse(await readFile(idxFile, "utf8")).weeks || [];
+  } catch { /* first week */ }
+  if (!weeks.includes(weekId)) weeks.push(weekId);
+  weeks.sort();
+  await writeFile(idxFile, JSON.stringify({ weeks }, null, 2) + "\n");
+}
 
 const weekId = process.argv[2];
 const titleIdx = process.argv.indexOf("--title");
@@ -124,6 +136,7 @@ const template = {
 };
 
 await writeFile(file, JSON.stringify(template, null, 2) + "\n");
+await upsertWeekIndex(weekId);
 console.log(`✓ Scaffolded ${file}`);
 console.log(`  Next: edit the placeholders (see docs/authoring-guide.md), then:`);
 console.log(`        node build/generate.js ${weekId}`);

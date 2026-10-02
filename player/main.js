@@ -45,6 +45,27 @@ async function main() {
     manifest = null; // no generated audio: browser speech synthesis fallback
   }
 
+  // Week picker: every week the build scripts have registered.
+  let weeks = [weekId];
+  try {
+    const index = await fetchJson("data/weeks/index.json");
+    if (Array.isArray(index.weeks) && index.weeks.length) weeks = index.weeks;
+    if (!weeks.includes(weekId)) weeks.push(weekId);
+  } catch { /* no index yet: single week */ }
+  if (weeks.length > 1) {
+    const holder = $("gate-weeks");
+    holder.hidden = false;
+    holder.replaceChildren(
+      ...weeks.map((id) => {
+        const chip = document.createElement("button");
+        chip.className = "gate-chip" + (id === weekId ? " current" : "");
+        chip.textContent = id;
+        chip.addEventListener("click", () => { location.search = `?week=${id}`; });
+        return chip;
+      }),
+    );
+  }
+
   const period = week.period ? `${week.period.start} → ${week.period.end}` : "";
   $("gate-kicker").textContent = `ZOP AI · WEEKLY BRIEFING · ${weekId}`;
   $("gate-title").textContent = week.title || "Weekly briefing";
