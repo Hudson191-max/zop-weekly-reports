@@ -1,0 +1,35 @@
+- generic [ref=e2]:
+  - main [ref=e3]:
+    - region "Opening" [ref=e11]:
+      - generic [aria-hidden]: "01"
+      - generic [ref=e12]:
+        - paragraph [ref=e13]: ZOP AI · CLIENT BRIEFING · 2026-W40
+        - heading "The Week Support Went Quiet" [level=1] [ref=e14]
+        - paragraph [ref=e15]: Automation coverage climbed, tickets dropped, and one release stole the show. Compiled from the week's own records.
+        - generic [ref=e16]:
+          - generic [ref=e17]:
+            - generic [ref=e18]: "1"
+            - generic [ref=e19]: Projects shipped
+          - generic [ref=e20]:
+            - generic [ref=e21]: "0"
+            - generic [ref=e22]: Tasks automated
+          - generic [ref=e23]:
+            - generic [ref=e24]: "0"
+            - generic [ref=e25]: Audit findings
+        - generic [ref=e26]:
+          - generic [ref=e27]: Narrated by J.A.R.V.I.S
+          - generic [ref=e28]: Demo data — replace with your feed
+  - banner [ref=e29]:
+    - generic [ref=e30]: 2026-W40
+    - generic [ref=e31]: The Week Support Went Quiet
+    - button "Scene menu" [ref=e33]: ☰
+  - contentinfo [ref=e34]:
+    - generic [ref=e35]:
+      - button "Previous scene" [ref=e36] [cursor=pointer]: ‹
+      - button "Play or pause" [ref=e37] [cursor=pointer]: ❚❚
+      - button "Next scene" [ref=e38] [cursor=pointer]: ›
+      - slider "Report progress" [ref=e39] [cursor=pointer]
+      - generic [ref=e40]: 0:00 / 3:36
+      - button "Toggle captions" [pressed] [ref=e41] [cursor=pointer]: CC
+      - button "Toggle narration" [ref=e42] [cursor=pointer]: 🔊
+  - generic: "Good evening. Zop AI, weekly briefing, week forty — Monday the twenty-eighth of September through Sunday the fourth of October. This week, the machines did the boring parts: twelve thousand tasks automated, and support finally went quiet. Sit back, sir. The numbers are rather pleasing."

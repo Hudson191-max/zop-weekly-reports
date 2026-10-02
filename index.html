@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zop AI animated weekly report — narrated, interactive, data-driven." />
+  <title>Zop AI — Weekly Briefing</title>
+  <link rel="stylesheet" href="player/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%235865F2'/><text x='16' y='22' font-size='16' font-family='Segoe UI' font-weight='700' fill='white' text-anchor='middle'>Z</text></svg>" />
+</head>
+<body>
+  <div id="app">
+    <main id="stage" aria-live="polite"></main>
+
+    <header id="topbar" class="hud" hidden>
+      <span id="hud-week" class="hud-week"></span>
+      <span id="hud-title" class="hud-title"></span>
+      <div class="hud-actions">
+        <button id="btn-menu" class="hud-btn" title="Scene menu (Esc)" aria-label="Scene menu">☰</button>
+      </div>
+    </header>
+
+    <footer id="controls" class="hud" hidden>
+      <div class="controls-row">
+        <button id="btn-prev" class="ctrl-btn" title="Previous scene (←)" aria-label="Previous scene">‹</button>
+        <button id="btn-play" class="ctrl-btn ctrl-play" title="Play / pause (Space)" aria-label="Play or pause">▶</button>
+        <button id="btn-next" class="ctrl-btn" title="Next scene (→)" aria-label="Next scene">›</button>
+        <div id="progress" class="progress" role="slider" aria-label="Report progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <span id="timecode" class="timecode">0:00 / 0:00</span>
+        <button id="btn-captions" class="ctrl-btn ctrl-toggle" title="Captions (C)" aria-label="Toggle captions" aria-pressed="true">CC</button>
+        <button id="btn-mute" class="ctrl-btn ctrl-toggle" title="Mute (M)" aria-label="Toggle narration" aria-pressed="false">🔊</button>
+      </div>
+    </footer>
+
+    <div id="captions" class="captions" hidden></div>
+
+    <div id="menu-overlay" class="menu-overlay" hidden>
+      <div class="menu-panel" role="dialog" aria-label="Scene menu">
+        <div class="menu-head">
+          <span class="menu-title">Scenes</span>
+          <button id="btn-menu-close" class="ctrl-btn" aria-label="Close menu">×</button>
+        </div>
+        <ol id="menu-list" class="menu-list"></ol>
+      </div>
+    </div>
+
+    <div id="gate" class="gate">
+      <div class="gate-card">
+        <p class="gate-kicker" id="gate-kicker">ZOP AI · WEEKLY BRIEFING</p>
+        <h1 class="gate-title" id="gate-title">Loading…</h1>
+        <p class="gate-sub" id="gate-sub">An animated, narrated report.</p>
+        <button id="btn-start" class="gate-btn" disabled>Preparing…</button>
+        <p class="gate-hint">Best with sound · Use ← → to navigate, M to mute</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="player/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+{
+  "week": "2026-W40",
+  "title": "The Week Support Went Quiet",
+  "subtitle": "Automation coverage climbed, tickets dropped, and one release stole the show.",
+  "period": { "start": "2026-09-28", "end": "2026-10-04" },
+  "theme": {
+    "accent": "#5865F2",
+    "accentAlt": "#FFB020",
+    "narrator": "J.A.R.V.I.S"
+  },
+  "sections": [
+    {
+      "type": "title",
+      "label": "Opening",
+      "kicker": "ZOP AI  ·  CLIENT BRIEFING  ·  2026-W40",
+      "title": "The Week Support Went Quiet",
+      "subtitle": "Automation coverage climbed, tickets dropped, and one release stole the show. Compiled from the week's own records.",
+      "chips": ["Narrated by J.A.R.V.I.S", "Demo data — replace with your feed"],
+      "stats": [
+        { "label": "Projects shipped", "value": 2 },
+        { "label": "Tasks automated", "value": 12847 },
+        { "label": "Audit findings", "value": 0 }
+      ],
+      "narration": "Good evening. Zop AI, weekly briefing, week forty — Monday the twenty-eighth of September through Sunday the fourth of October. This week, the machines did the boring parts: twelve thousand tasks automated, and support finally went quiet. Sit back, sir. The numbers are rather pleasing."
+    },
+    {
+      "type": "scoreboard",
+      "label": "Scoreboard",
+      "heading": "The week in numbers",
+      "metrics": [
+        { "label": "Tasks automated", "value": 12847, "delta": "+18%", "good": true, "note": "vs week 39" },
+        { "label": "Avg. response time", "value": 1.9, "suffix": "s", "delta": "−0.4s", "good": true, "note": "assistant median" },
+        { "label": "Support tickets", "value": 214, "delta": "−31%", "good": true, "note": "opened this week" },
+        { "label": "Platform uptime", "value": 99.98, "suffix": "%", "delta": "stable", "good": true, "note": "30-day rolling" }
+      ],
+      "narration": "First, the scoreboard. Twelve thousand eight hundred forty-seven tasks automated — up eighteen percent. Average response time, one point nine seconds. Support tickets: two hundred fourteen. That is down thirty-one percent. And uptime held at ninety-nine point nine eight percent. Four numbers, one conclusion: the platform is pulling its weight."
+    },
+    {
+      "type": "projects",
+      "label": "Build board",
+      "heading": "What the team shipped",
+      "items": [
+        { "name": "Smart Triage v2", "status": "shipped", "progress": 100, "note": "Live Tuesday. Routes 4 of 5 tickets with no human touch." },
+        { "name": "Slack connector", "status": "shipped", "progress": 100, "note": "Live Thursday. Alert digests in three workspaces already." },
+        { "name": "Multilingual summaries", "status": "in-progress", "progress": 68, "note": "Six languages in internal beta, on track." },
+        { "name": "Audit log export", "status": "at-risk", "progress": 45, "note": "Schema migration needs a redesign. Watch this one." }
+      ],
+      "narration": "Now, the build board. Smart Triage version two shipped on Tuesday, and it routes tickets without waking a human four times out of five. The Slack connector shipped Thursday. Multilingual summaries are at sixty-eight percent, on track. Audit log export, though, sits at forty-five percent and is flagged at risk — the one to watch."
+    },
+    {
+      "type": "chart",
+      "label": "Tickets per day",
+      "heading": "Tickets handled per day",
+      "caption": "Human-touch tickets, Monday through Sunday. The slope is the point.",
+      "chart": {
+        "kind": "bar",
+        "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "series": [{ "name": "Tickets", "values": [58, 41, 36, 22, 14, 9, 9] }]
+      },
+      "narration": "Here is the week's best chart. Tickets handled per day, Monday through Sunday. Fifty-eight. Forty-one. Thirty-six. Twenty-two. Fourteen. Nine. And Sunday, nine. Every step down is an hour a human got back. That slope is the entire business case, drawn in one line."
+    },
+    {
+      "type": "chart",
+      "label": "Where hours went",
+      "heading": "Where the automation hours went",
+      "caption": "Share of automated task hours by department, week 40.",
+      "chart": {
+        "kind": "donut",
+        "labels": ["Support", "Sales ops", "Reporting", "Internal tooling"],
+        "series": [{ "name": "Share", "values": [42, 27, 19, 12] }]
+      },
+      "narration": "Where did the automation hours go? Support takes forty-two percent. Sales ops, twenty-seven. Reporting, nineteen. Internal tooling, twelve. Support still leads, but sales ops grew fastest — that is the quiet expansion to watch next quarter."
+    },
+    {
+      "type": "timeline",
+      "label": "The week",
+      "heading": "The week, day by day",
+      "events": [
+        { "day": "Mon", "date": "Sep 28", "text": "Data pipeline hiccup — fixed before lunch. Forty minutes, no data lost.", "tag": "incident" },
+        { "day": "Tue", "date": "Sep 29", "text": "Smart Triage v2 goes live for all customers.", "tag": "release" },
+        { "day": "Wed", "date": "Sep 30", "text": "Audit review passes with zero findings.", "tag": "milestone" },
+        { "day": "Thu", "date": "Oct 1", "text": "Slack connector ships; three workspaces adopt on day one.", "tag": "release" },
+        { "day": "Fri", "date": "Oct 2", "text": "Northwind client demo — they signed before the coffee went cold.", "tag": "win" }
+      ],
+      "narration": "The week, day by day. Monday: a data pipeline hiccup, fixed before lunch — forty minutes, no data lost. Tuesday: Smart Triage version two goes live. Wednesday: the slowest day, and quietly the most important — the audit review passed with zero findings. Thursday: the Slack connector ships. Friday: the Northwind demo. They signed before the coffee went cold."
+    },
+    {
+      "type": "winsBlockers",
+      "label": "Wins & blockers",
+      "heading": "Wins and blockers",
+      "wins": [
+        { "text": "Automation coverage crossed 80%", "note": "From 71% last week — biggest single-week jump this quarter." },
+        { "text": "Audit passed with zero findings", "note": "First clean audit since the platform launched." },
+        { "text": "Northwind signed", "note": "Largest deal of the quarter, closed five days after first demo." }
+      ],
+      "blockers": [
+        { "text": "Audit log export slipped", "note": "Schema migration trickier than planned. New design lands Monday." },
+        { "text": "CRM connector rate limit", "note": "Vendor-side cap. Workaround in place, queued requests under 1%." }
+      ],
+      "narration": "The wins: automation coverage crossed eighty percent, the audit passed clean, and Northwind signed. The blockers: the audit log export slipped — the schema migration is trickier than planned — and a rate limit on the CRM connector side, workaround already in place. Two blockers, both owned, both dated."
+    },
+    {
+      "type": "outlook",
+      "label": "Next week",
+      "heading": "Next week's plan",
+      "items": [
+        { "text": "Audit log export: new schema in, hard deadline Thursday", "due": "Thu" },
+        { "text": "Multilingual summaries reach public beta", "due": "Wed" },
+        { "text": "Sales ops connector graduates from pilot to production", "due": "Fri" }
+      ],
+      "note": "If all three land, week 41 closes with automation coverage past 90%.",
+      "narration": "Next week: the audit log export gets its new schema, with a hard deadline of Thursday. Multilingual summaries hit public beta. And the sales ops connector graduates from pilot to production. If those three land, week forty-one ends with automation coverage past ninety percent. That, sir, is the plan."
+    },
+    {
+      "type": "outro",
+      "label": "Close",
+      "heading": "End of briefing",
+      "message": "Numbers up. Tickets down. One signature on the wall.",
+      "highlights": ["+18% tasks automated", "−31% tickets", "99.98% uptime", "0 audit findings"],
+      "narration": "That closes week forty. Numbers up, tickets down, one signature on the wall. The full data behind every figure lives in the report pack — and next week's briefing will be waiting, right here. Until then… the machines have it from here."
+    }
+  ]
+}

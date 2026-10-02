@@ -1,0 +1,26 @@
+- generic [ref=f2e2]:
+  - main [ref=f2e3]:
+    - region "Close" [ref=f2e11]:
+      - generic [aria-hidden]: "09"
+      - generic [ref=f2e12]:
+        - paragraph [ref=f2e13]: End of briefing
+        - paragraph [ref=f2e14]: Numbers up. Tickets down. One signature on the wall.
+        - generic [ref=f2e15]:
+          - generic [ref=f2e16]: +18% tasks automated
+          - generic [ref=f2e17]: −31% tickets
+          - generic [ref=f2e18]: 99.98% uptime
+          - generic [ref=f2e19]: 0 audit findings
+  - banner [ref=f2e20]:
+    - generic [ref=f2e21]: 2026-W40
+    - generic [ref=f2e22]: The Week Support Went Quiet
+    - button "Scene menu" [ref=f2e24]: ☰
+  - contentinfo [ref=f2e25]:
+    - generic [ref=f2e26]:
+      - button "Previous scene" [ref=f2e27] [cursor=pointer]: ‹
+      - button "Play or pause" [ref=f2e28] [cursor=pointer]: ▶
+      - button "Next scene" [ref=f2e29] [cursor=pointer]: ›
+      - slider "Report progress" [ref=f2e30] [cursor=pointer]
+      - generic [ref=f2e32]: 3:35 / 3:36
+      - button "Toggle captions" [pressed] [ref=f2e33] [cursor=pointer]: CC
+      - button "Toggle narration" [ref=f2e34] [cursor=pointer]: 🔊
+  - generic: That closes week forty. Numbers up, tickets down, one signature on the wall. The full data behind every figure lives in the report pack — and next week's briefing will be waiting, right here. Until then… the machines have it from here.

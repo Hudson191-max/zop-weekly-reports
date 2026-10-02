@@ -1,0 +1,16 @@
+{
+  "name": "zop-weekly-reports",
+  "version": "0.1.0",
+  "description": "Zop AI animated weekly report — narrated, interactive, data-driven web reports plus video export.",
+  "type": "module",
+  "scripts": {
+    "serve": "node build/serve.js",
+    "generate": "node build/generate.js",
+    "new-week": "node build/new-week.js",
+    "video": "node build/video/make-video.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}

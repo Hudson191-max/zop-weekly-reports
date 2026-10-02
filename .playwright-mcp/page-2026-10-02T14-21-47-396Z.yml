@@ -1,0 +1,8 @@
+- generic [ref=e2]:
+  - main [ref=e3]
+  - generic [ref=e5]:
+    - paragraph [ref=e6]: ZOP AI · WEEKLY BRIEFING · 2026-W40
+    - heading "The Week Support Went Quiet" [level=1] [ref=e7]
+    - paragraph [ref=e8]: Narrated by J.A.R.V.I.S · 2026-09-28 → 2026-10-04
+    - button "▶ Play the briefing" [ref=e9] [cursor=pointer]
+    - paragraph [ref=e10]: Best with sound · Use ← → to navigate, M to mute
