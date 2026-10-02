@@ -1,7 +1,9 @@
 node_modules/
 .DS_Store
 Thumbs.db
+audio/*/
 !audio/2026-W40/
+!audio/2026-W40/**
 audio.json
 reports/
 *.log
