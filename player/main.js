@@ -11,6 +11,11 @@ function weekIdFromUrl() {
   return param ? param.replace(/[^a-zA-Z0-9\-_]/g, "") : "2026-W40";
 }
 
+// Video-export mode: /?scene=3&mute — skip the gate, open on one scene, silent.
+const exportParams = new URLSearchParams(location.search);
+const EXPORT_SCENE = exportParams.has("scene") ? Number(exportParams.get("scene")) : null;
+if (EXPORT_SCENE != null) document.documentElement.classList.add("export");
+
 async function fetchJson(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
@@ -53,16 +58,28 @@ async function main() {
 
   const start = () => {
     $("gate").hidden = true;
-    $("topbar").hidden = false;
-    $("controls").hidden = false;
-    $("hud-week").textContent = weekId;
-    $("hud-title").textContent = week.title || "";
-    engine.play(0);
+    if (EXPORT_SCENE != null && Number.isInteger(EXPORT_SCENE)) {
+      // Video export: clean frames — no HUD, no captions, silent, settled scene.
+      engine.play(Math.max(0, Math.min(engine.sceneCount - 1, EXPORT_SCENE)));
+      engine.narrator.setMuted(true);
+      engine.setCaptions(false);
+      setTimeout(() => engine.pause(), 300);
+    } else {
+      $("topbar").hidden = false;
+      $("controls").hidden = false;
+      $("hud-week").textContent = weekId;
+      $("hud-title").textContent = week.title || "";
+      engine.play(0);
+    }
   };
 
-  $("btn-start").disabled = false;
-  $("btn-start").textContent = manifest ? "▶  Play the briefing" : "▶  Play the briefing (browser voice)";
-  $("btn-start").addEventListener("click", start);
+  if (EXPORT_SCENE != null && Number.isInteger(EXPORT_SCENE)) {
+    start(); // video-export mode: no gate, no interaction
+  } else {
+    $("btn-start").disabled = false;
+    $("btn-start").textContent = manifest ? "▶  Play the briefing" : "▶  Play the briefing (browser voice)";
+    $("btn-start").addEventListener("click", start);
+  }
 
   // Driving hook for QA automation and the video exporter (build/video/).
   window.__zopEngine = engine;

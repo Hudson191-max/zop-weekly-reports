@@ -699,7 +699,23 @@ html, body {
 .gate-btn:disabled { opacity: 0.5; cursor: wait; }
 .gate-hint { font-size: 13px; color: var(--inv-muted); margin: 6px 0 0; }
 
-/* ---------- Reduced motion ---------- */
+/* ---------- Reduced motion / video-export (static final states) ---------- */
+
+html.export [data-animate],
+html.export .bar-rect,
+html.export .bar-value {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+html.export .bar-rect { transform: scaleY(1) !important; }
+html.export .line-area { opacity: 1 !important; transition: none !important; }
+html.export .line-dot { opacity: 1 !important; transition: none !important; }
+html.export .progress-bar { transform: scaleX(1) !important; transition: none !important; }
+html.export .donut-seg {
+  stroke-dasharray: var(--len, 0) var(--rest, 742) !important;
+  transition: none !important;
+}
 
 @media (prefers-reduced-motion: reduce) {
   [data-animate] { opacity: 1 !important; transform: none !important; transition: none !important; }

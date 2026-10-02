@@ -1,6 +1,11 @@
 // Small shared helpers for scene renderers.
 
-export const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Video-export screenshots run under virtual time where rAF never fires,
+// so export mode forces every animation to its final state.
+const EXPORT_MODE = new URLSearchParams(location.search).has("scene");
+
+export const prefersReducedMotion =
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches || EXPORT_MODE;
 
 /** Create an element with attributes, class list, and children in one call. */
 export function el(tag, attrs = {}, ...children) {
